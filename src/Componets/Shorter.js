@@ -45,13 +45,12 @@ function Shorter() {
   };
   const deleteurl = async (id) => {
     try {
-      const responce = await fetch(`http://localhost:5000/deleteurl/${id}`, {
+      await fetch(`http://localhost:5000/deleteurl/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
         },
       });
-      const data = await responce.json();
       await geturl();
     } catch (error) {
       console.log(error);
